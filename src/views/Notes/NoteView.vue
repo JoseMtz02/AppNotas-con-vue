@@ -98,7 +98,7 @@ import { PencilIcon, PencilSquareIcon, TrashIcon } from '@heroicons/vue/24/outli
   });
 
   const totalNotes = computed(() => noteStore.notes.length);
-  const totalByCategory = computed(()=> (cat:Note['cat']) => {
+  const totalByCategory = computed(()=> (cat: string) => {
     return noteStore.filterNotes(cat).length;
   });
 

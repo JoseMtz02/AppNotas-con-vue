@@ -10,7 +10,7 @@
         type="text"
         required
         placeholder="Ingresa el título de la nota"
-        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 focus:ring-2 focus:ring-orange-500 focus:outline-none text-black"
+        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 text-black"
       />
     </div>
 
@@ -23,7 +23,7 @@
         v-model="form.description"
         rows="3"
         placeholder="Añade una descripción"
-        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 focus:ring-2 focus:ring-orange-500 focus:outline-none text-black"
+        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 text-black"
       ></textarea>
     </div>
 
@@ -32,7 +32,7 @@
       <select
         id="cat"
         v-model="form.cat"
-        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 focus:ring-2 focus:ring-orange-500 focus:outline-none text-black"
+        class="w-full px-4 py-2.5 rounded-lg border border-orange-400 text-black"
       >
         <option v-for="category in categories" :key="category" :value="category">
           {{ category }}
@@ -44,7 +44,7 @@
           v-model="newCategory"
           type="text"
           placeholder="Nueva categoría"
-          class="flex-1 px-4 py-2.5 rounded-lg border border-orange-400 focus:ring-2 focus:ring-orange-500 focus:outline-none text-black"
+          class="flex-1 px-4 py-2.5 rounded-lg border border-orange-400  text-black"
         />
         <button
           type="button"

@@ -4,9 +4,7 @@
             <h3 class="text-lg font-semibold text-orange-700">{{ note.title }}</h3>
             <p class="text-gray-900 text-sm">{{ note.description }}</p>
             <div class="flex items-center gap-2 text-sm text-gray-500 mt-2">
-                <span :class="['px-2 py-1 rounded-full text-xs font-semibold text-orang']">
-                     {{ note.cat }}
-                </span>
+
                 <time :datetime="new Date(note.createdAt).toISOString()">
                   {{ formatDueDate(note.createdAt) }}
             </time>

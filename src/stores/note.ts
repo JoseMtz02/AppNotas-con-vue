@@ -38,10 +38,10 @@ export const useNoteStore = defineStore('note', () => {
 
   function deleteAll() {
     notes.value = [];
-    categories.value =  ["trabajo", "personal", "urgente"]; 
+    categories.value =  ["trabajo", "personal", "urgente"];
   }
 
-  function filterNotes(category: Note['cat']) {
+  function filterNotes(category: string) {
     return notes.value
       .filter((x) => x.cat === category)
       .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
