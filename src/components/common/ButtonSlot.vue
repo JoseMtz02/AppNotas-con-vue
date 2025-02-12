@@ -1,13 +1,12 @@
 <template>
     <button
       :class="[
-        'inline-flex items-center justify-center gap-2 px-6 py-3 font-medium rounded-xl transition-all',
-        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400',
+        'inline-flex items-center justify-center px-6 py-3 font-medium rounded-xl',
         variant === 'primary'
           ? 'bg-orange-600 hover:bg-orange-700 text-white shadow-orange-500/50'
           : variant === 'secondary'
-            ? 'bg-gray-700 hover:bg-gray-600 text-white ring-1 ring-inset ring-gray-500'
-            : 'bg-red-600 hover:bg-red-700 text-white shadow-orange-500/30',
+            ? 'bg-gray-700 hover:bg-gray-600 text-white'
+            : 'bg-red-600 hover:bg-red-700 text-white',
         disabled && 'opacity-50 cursor-not-allowed',
       ]"
       :disabled="disabled"

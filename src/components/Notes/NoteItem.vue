@@ -1,10 +1,10 @@
 <template>
-    <div class="flex items-center justify-between p-4 rounded-lg border border-gray-300 shadow-sm hover:shadow-md hover:shadow-orange-500/50 transition-shadow">
+    <div class="flex items-center justify-between p-4 rounded-lg border border-gray-300">
         <div class="flex-1">
             <h3 class="text-lg font-semibold text-orange-700">{{ note.title }}</h3>
             <p class="text-gray-900 text-sm">{{ note.description }}</p>
             <div class="flex items-center gap-2 text-sm text-gray-500 mt-2">
-                <span :class="['px-2 py-1 rounded-full text-xs font-semibold text-white bg-orange-600']">
+                <span :class="['px-2 py-1 rounded-full text-xs font-semibold text-orang']">
                      {{ note.cat }}
                 </span>
                 <time :datetime="new Date(note.createdAt).toISOString()">

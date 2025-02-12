@@ -2,6 +2,6 @@ export interface Note{
   id: string
   title: string
   description: string
-  cat: 'trabajo' | 'personal' | 'urgente'
+  cat: 'Trabajo' | 'Personal' | 'Urgente'
   createdAt: Date
 }
