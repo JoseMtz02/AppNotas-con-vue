@@ -4,7 +4,7 @@
 
   export const useNoteStore = defineStore('note', () => {
     const notes = ref<Note[]>(JSON.parse(localStorage.getItem('notes') || '[]'));
-    const categories = ref<string[]>(JSON.parse(localStorage.getItem('categories') || '["trabajo", "personal", "urgente"]'));
+    const categories = ref<string[]>(JSON.parse(localStorage.getItem('categories') || '[]'));
 
     function getNotes(): Note[] {
       return notes.value;
@@ -38,7 +38,7 @@
 
     function deleteAll() {
       notes.value = [];
-      categories.value =  ["trabajo", "personal", "urgente"];
+      categories.value =  [];
     }
 
     function filterNotes(category: string) {

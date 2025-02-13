@@ -29,15 +29,20 @@
 
     <div class="space-y-1">
       <label for="cat" class="block text-sm font-medium text-orange-800">Categoría</label>
-      <select
+      <div
+      v-if="categories.length > 0">
+        <select
         id="cat"
         v-model="form.cat"
         class="w-full px-4 py-2.5 rounded-lg border border-orange-400 text-black"
       >
+      <option value="" disabled selected>Selecciona una categoría</option>
         <option v-for="category in categories" :key="category" :value="category">
           {{ category }}
         </option>
       </select>
+      </div>
+
 
       <div class="mt-3 flex gap-2">
         <input
@@ -97,7 +102,7 @@ const emit = defineEmits<{ (e: 'submit', note: Omit<Note, 'id' | 'createdAt'>): 
 const initialForm = {
   title: props.noteToEdit?.title || '',
   description: props.noteToEdit?.description || '',
-  cat: props.noteToEdit?.cat || 'personal',
+  cat: props.noteToEdit?.cat || '',
 };
 
 const form = reactive({ ...initialForm });
