@@ -88,7 +88,7 @@ const noteStore = useNoteStore();
 const categories = noteStore.categories;
 
 const isModalCompleted = computed(() => {
-  return form.title.trim() !== '' && form.cat.trim() !== '';
+  return form.title !== '' && form.cat !== '';
 });
 
 const props = defineProps<{ noteToEdit?: Note | null }>();
@@ -113,10 +113,10 @@ const resetForm = () => {
 };
 
 const addNewCategory = () => {
-  if (newCategory.value.trim() !== '') {
-    noteStore.addCategory(newCategory.value.trim());
+  if (newCategory.value !== '') {
+    noteStore.addCategory(newCategory.value);
     form.cat = newCategory.value.trim();
-    newCategory.value = '';
+    newCategory.value = '';  //se restablece la entrada de categoria justo despues de agregar la categoria
   }
 };
 </script>

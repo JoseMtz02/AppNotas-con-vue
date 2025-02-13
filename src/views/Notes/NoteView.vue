@@ -46,7 +46,8 @@
           <h2 class="text-xl font-semibold mb-2 capitalize">
             {{ category }} ({{ totalByCategory(category) }})
           </h2>
-          <div v-if="noteStore.filterNotes(category).length > 0" class="space-y-2">
+          <div v-if="noteStore.filterNotes(category).length > 0"
+            class="flex flex-wrap gap-4 justify-center">
             <NoteItem
               v-for="note in noteStore.filterNotes(category)"
               :key="note.id"
@@ -55,7 +56,7 @@
               @delete="deleteNote"
             />
           </div>
-          <div v-else class="text-gray-600 text-center p-4">No hay notas en esta categoría.</div>
+          <div v-else class=" text-center p-4 text-red-600">No hay notas en esta categoría.</div>
         </div>
       </div>
     </div>
@@ -93,9 +94,9 @@ import { PencilIcon, PencilSquareIcon, TrashIcon } from '@heroicons/vue/24/outli
   const selectedCategory = ref<string | null>(null);
   const categories = computed(()=> noteStore.categories);
 
-  onMounted(() => {
-    noteStore.getNotes();
-  });
+  onMounted(async () => {
+  await noteStore.getNotes()
+})
 
   const totalNotes = computed(() => noteStore.notes.length);
   const totalByCategory = computed(()=> (cat: string) => {
